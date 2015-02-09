@@ -15,11 +15,27 @@ public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_sequence")
-	public Long id;
+	private Long id;
 	
 	@Column(name = "name", length = 255, nullable = false)
-	public String name;
+	private String name;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("ID: %d, Name: %s", this.id, this.name);
